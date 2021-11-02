@@ -3,7 +3,7 @@ const autoIncrement = require('mongoose-auto-increment');
 
 const taskSchema = mongoose.Schema({
   name: String,
-  status: String,
+  status: { type: String, enum: ['pendente', 'em andamento', 'pronto'] },
 });
 
 autoIncrement.initialize(mongoose.connection);
