@@ -7,6 +7,7 @@ import NavBar from '../../components/NavBar';
 
 import './styles.css';
 
+
 const TaskList = () => {
   const [tasks, setTasks] = useState([]);
 
@@ -33,6 +34,7 @@ const TaskList = () => {
             <th>#</th>
             <th>Name</th>
             <th>Status</th>
+            <th>Created At</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -42,6 +44,7 @@ const TaskList = () => {
               <td>{task._id}</td>
               <td>{task.name}</td>
               <td>{task.status}</td>
+              <td>{task.createdAt}</td>
               <td>
                 <Button variant="info">
                   <Link to={`/edit/${task._id}`}>Edit</Link>
