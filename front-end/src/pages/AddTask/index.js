@@ -41,14 +41,16 @@ const AddTask = () => {
           <Form.Group>
             <Form.Label>Status</Form.Label>
             <Form.Select onChange={(e) => onSelectChange(e)} value={status}>
+              <option>Open this select menu</option>
               <option name='status' value="Pendente">Pendente</option>
               <option name='status' value={emAndamento}>Em andamento</option>
               <option name='status' value="Pronto">Pronto</option>
             </Form.Select>
           </Form.Group>
+          <Form.Group>
+            <Button onClick={() => addTaskDetails()}>Add Task</Button>
+          </Form.Group>
         </Form>
-          {/* <input onChange={(e) => onValueChange(e)} name='status' value={status} /> */}
-        <Button onClick={() => addTaskDetails()}>Add Task</Button>
       </div>
   )
 }

@@ -3,10 +3,14 @@ import { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { index, update } from '../../services/api';
 
+import { Form, Button } from 'react-bootstrap';
+
 const initialValue = {
     name: '',
     status: '',
 }
+
+const emAndamento = 'Em Andamento';
 
 const EditTask = () => {
   const [task, setTask] = useState(initialValue);
@@ -33,13 +37,31 @@ const EditTask = () => {
     setTask({...task, [e.target.name]: e.target.value})
   }
 
+  const onSelectChange = (e) => {
+    console.log(e.target.value);
+    setTask({...task, status: e.target.value });
+  }
+
   return (
     <div>
-      <input onChange={(e) => onValueChange(e)} name='name' value={name} />
-
-      <input onChange={(e) => onValueChange(e)} name='status' value={status} />
-
-      <button variant="contained" color="primary" onClick={() => editTaskDetails()}>Edit Task</button>
+        <Form>
+          <Form.Group>
+            <Form.Label>Task</Form.Label>
+            <Form.Control onChange={(e) => onValueChange(e)} name='name' value={name} />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Status</Form.Label>
+            <Form.Select onChange={(e) => onSelectChange(e)} value={status}>
+              <option>Open this select menu</option>
+              <option name='status' value="Pendente">Pendente</option>
+              <option name='status' value={emAndamento}>Em andamento</option>
+              <option name='status' value="Pronto">Pronto</option>
+            </Form.Select>
+          </Form.Group>
+          <Form.Group>
+            <Button onClick={() => editTaskDetails()}>Edit Task</Button>
+          </Form.Group>
+        </Form>
     </div>
 )
 };
