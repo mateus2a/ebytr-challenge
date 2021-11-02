@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { index, remove } from '../../services/api';
+import { Table, Button } from 'react-bootstrap'
 
 import './styles.css';
 
@@ -22,10 +23,11 @@ const TaskList = () => {
   }
 
   return (
-    <div className="list">
-      <table>
+    <div>
+      <Table striped bordered hover size="sm">
         <thead>
           <tr>
+            <th>#</th>
             <th>Name</th>
             <th>Status</th>
             <th>Actions</th>
@@ -34,18 +36,19 @@ const TaskList = () => {
         <tbody>
           {tasks.map((task) => (
             <tr>
+              <td>{task._id}</td>
               <td>{task.name}</td>
               <td>{task.status}</td>
               <td>
-                <button>
+                <Button variant="info">
                   <Link to={`/edit/${task._id}`}>Edit</Link>
-                </button>
-                <button onClick={() => deleteTask(task._id)}>Delete</button>
+                </Button>{' '}
+                <Button onClick={() => deleteTask(task._id)} variant="danger">Delete</Button>{' '}
               </td>
             </tr>
           ))}
         </tbody>
-      </table>
+      </Table>
     </div>
   );
 };

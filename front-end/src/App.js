@@ -3,6 +3,8 @@ import TaskList from './pages/TaskList';
 import EditTask from './pages/EditTask';
 
 import AddTask from './pages/AddTask';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 const App = () => {
   return (
     <BrowserRouter>
