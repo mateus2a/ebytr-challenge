@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { index, remove } from '../../services/api';
 import { Table, Button } from 'react-bootstrap'
 
+import NavBar from '../../components/NavBar';
+
 import './styles.css';
 
 const TaskList = () => {
@@ -24,6 +26,7 @@ const TaskList = () => {
 
   return (
     <div>
+      <NavBar />
       <Table striped bordered hover size="sm">
         <thead>
           <tr>
