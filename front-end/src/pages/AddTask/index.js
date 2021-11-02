@@ -28,7 +28,7 @@ const AddTask = () => {
 
         <input onChange={(e) => onValueChange(e)} name='status' value={status}  />
 
-        <button variant="contained" color="primary" onClick={() => addTaskDetails()}>Add Task</button>
+        <button onClick={() => addTaskDetails()}>Add Task</button>
       </div>
   )
 }

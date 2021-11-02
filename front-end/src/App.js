@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import TaskList from './pages/TaskList';
+import EditTask from './pages/EditTask';
 
 import AddTask from './pages/AddTask';
 const App = () => {
@@ -8,6 +9,7 @@ const App = () => {
       <Switch>
         <Route exact path="/all" component={TaskList} />
         <Route exact path="/add" component={AddTask} />
+        <Route exact path="/edit/:id" component={EditTask} />
       </Switch>
     </BrowserRouter>
   );

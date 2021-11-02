@@ -35,7 +35,9 @@ const TaskList = () => {
               <td>{task.name}</td>
               <td>{task.status}</td>
               <td>
-                <button component={Link} to={`/edit/${task._id}`}>Edit</button>
+                <button>
+                  <Link to={`/edit/${task._id}`}>Edit</Link>
+                </button>
                 <button onClick={() => deleteTask(task._id)}>Delete</button>
               </td>
             </tr>
