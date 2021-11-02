@@ -24,7 +24,7 @@ module.exports = {
   async read(req, res) {
     try {
       const task = await Task.findById(req.params.id);
-      req.status(200).json(task);
+      res.status(200).json(task);
     } catch (error) {
       res.status(404).json({ message: error.message })
     }
@@ -42,7 +42,7 @@ module.exports = {
       res.status(409).json({ message: error.message});
     }
   },
-  async delete(req, res) {
+  async remove(req, res) {
     try{
       await Task.deleteOne({_id: req.params.id});
       res.status(201).json("Task deleted Successfully");
