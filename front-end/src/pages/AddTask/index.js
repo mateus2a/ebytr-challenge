@@ -32,24 +32,25 @@ const AddTask = () => {
   }
 
   return (
-      <div>
-        <Form>
-          <Form.Group>
-            <Form.Label>Task</Form.Label>
-            <Form.Control onChange={(e) => onValueChange(e)} name='name' value={name} />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Status</Form.Label>
-            <Form.Select onChange={(e) => onSelectChange(e)} value={status}>
-              <option>Open this select menu</option>
-              <option name='status' value="Pendente">Pendente</option>
-              <option name='status' value={emAndamento}>Em andamento</option>
-              <option name='status' value="Pronto">Pronto</option>
-            </Form.Select>
-          </Form.Group>
-          <Form.Group>
-            <Button onClick={() => addTaskDetails()}>Add Task</Button>
-          </Form.Group>
+      <div className="row justify-content-center mt-5">
+        <Form className="w-50 border border-secondary rounded">
+        <h2 class="pt-5 text-center">New Task</h2>
+            <Form.Group>
+              <Form.Label className="pt-5">Task</Form.Label>
+              <Form.Control onChange={(e) => onValueChange(e)} name='name' value={name} />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label className="pt-5">Status</Form.Label>
+              <Form.Select onChange={(e) => onSelectChange(e)} value={status}>
+                <option>Open this select menu</option>
+                <option name='status' value="Pendente">Pendente</option>
+                <option name='status' value={emAndamento}>Em andamento</option>
+                <option name='status' value="Pronto">Pronto</option>
+              </Form.Select>
+            </Form.Group>
+            <Form.Group className="pt-5 pb-3">
+              <Button onClick={() => addTaskDetails()}>Add Task</Button>
+            </Form.Group>
         </Form>
       </div>
   )

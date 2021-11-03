@@ -43,14 +43,15 @@ const EditTask = () => {
   }
 
   return (
-    <div>
-        <Form>
+    <div className="row justify-content-center mt-5">
+        <Form className="w-50 border border-secondary rounded">
+          <h2 class="pt-5 text-center">Edit Task</h2>
           <Form.Group>
-            <Form.Label>Task</Form.Label>
+            <Form.Label className="pt-5">Task</Form.Label>
             <Form.Control onChange={(e) => onValueChange(e)} name='name' value={name} />
           </Form.Group>
           <Form.Group>
-            <Form.Label>Status</Form.Label>
+            <Form.Label className="pt-5">Status</Form.Label>
             <Form.Select onChange={(e) => onSelectChange(e)} value={status}>
               <option>Open this select menu</option>
               <option name='status' value="Pendente">Pendente</option>
@@ -58,7 +59,7 @@ const EditTask = () => {
               <option name='status' value="Pronto">Pronto</option>
             </Form.Select>
           </Form.Group>
-          <Form.Group>
+          <Form.Group className="pt-5 pb-3">
             <Button onClick={() => editTaskDetails()}>Edit Task</Button>
           </Form.Group>
         </Form>
