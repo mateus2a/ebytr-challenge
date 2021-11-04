@@ -30,4 +30,9 @@ describe('Testing <App />', () => {
     const routerComponent = screen.queryByTestId('route-edit');
     expect(routerComponent).toBeDefined();
   });
+  it('has a component <Router />', () => {
+    render(<App />);
+    const routerComponent = screen.queryByTestId('route-default');
+    expect(routerComponent).toBeDefined();
+  });
 });
