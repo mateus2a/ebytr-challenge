@@ -28,7 +28,9 @@ const TaskList = () => {
   return (
     <div>
       <NavBar />
-      <Table striped bordered hover size="sm">
+      <div className="row justify-content-center">
+        <div class="col-8">
+      <Table striped bordered hover className="table table-responsive">
         <thead>
           <tr>
             <th>#</th>
@@ -55,6 +57,8 @@ const TaskList = () => {
           ))}
         </tbody>
       </Table>
+      </div>
+      </div>
     </div>
   );
 };

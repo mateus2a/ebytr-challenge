@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const tasksUrl = 'http://localhost:8080/tasks';
+export const tasksUrl = 'http://localhost:8080/tasks';
 
 export const index = async (id) => {
     id = id || '';
